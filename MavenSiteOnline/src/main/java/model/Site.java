@@ -4,6 +4,7 @@ public class Site {
     private String url;
     private String lastContent;
     private boolean isOnline;
+    private String lastChangeTime;
 
     public Site(String url) {
         this.url = ensureHttpProtocol(url);
@@ -29,7 +30,15 @@ public class Site {
         return isOnline;
     }
 
-    public void setOnline(boolean isOnline) {
+    public String getLastChangeTime() {
+		return lastChangeTime;
+	}
+
+	public void setLastChangeTime(String lastChangeTime) {
+		this.lastChangeTime = lastChangeTime;
+	}
+
+	public void setOnline(boolean isOnline) {
         this.isOnline = isOnline;
     }
 

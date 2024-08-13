@@ -4,6 +4,8 @@ import model.Site;
 import util.HttpUtil;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -11,13 +13,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SiteChecker {
-
-    private Map<String, String> previousContentHashes = new HashMap<>();
+    private final Map<String, String> previousHashes = new HashMap<>();
 
     public boolean isSiteOnline(Site site) {
         try {
-            HttpUtil.getHttpResponse(site.getUrl());
-            return true;
+            @SuppressWarnings("deprecation")
+			URL url = new URL(site.getUrl());
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+
+            int responseCode = connection.getResponseCode();
+            return responseCode == 200; 
         } catch (IOException e) {
             return false;
         }
@@ -27,36 +34,35 @@ public class SiteChecker {
         try {
             String currentContent = HttpUtil.getHttpResponse(site.getUrl());
             String currentHash = hashContent(currentContent);
-            String previousHash = previousContentHashes.get(site.getUrl());
+            String previousHash = previousHashes.get(site.getUrl());
 
             if (previousHash != null && !previousHash.equals(currentHash)) {
-                previousContentHashes.put(site.getUrl(), currentHash);
+            	previousHashes.put(site.getUrl(), currentHash);
                 return true;
             }
 
-            previousContentHashes.put(site.getUrl(), currentHash);
+            previousHashes.put(site.getUrl(), currentHash);
             return false;
-        } catch (IOException | NoSuchAlgorithmException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
     }
-
-    private String hashContent(String content) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedhash = digest.digest(content.getBytes(StandardCharsets.UTF_8));
-        return bytesToHex(encodedhash);
-    }
-
-    private String bytesToHex(byte[] hash) {
-        StringBuilder hexString = new StringBuilder(2 * hash.length);
-        for (byte b : hash) {
-            String hex = Integer.toHexString(0xff & b);
-            if (hex.length() == 1) {
-                hexString.append('0');
+  
+    private String hashContent(String content) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = digest.digest(content.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hashBytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
             }
-            hexString.append(hex);
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
         }
-        return hexString.toString();
     }
+
 }

@@ -1,54 +1,42 @@
 package main;
 
 import model.Site;
+import service.SiteMonitorWindow;
+import assists.GetSiteURL;
+import assists.GetPhoneNumber;
+
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static boolean stopMonitoring = false;
-    private static List<String> phoneNumbers = new ArrayList<>();
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        List<Site> sites = new ArrayList<>();
 
-        // Collect phone numbers
-        System.out.println("Digite os números de telefone para envio de mensagens (formato: whatsapp:+[código do país][número], digite 'sair' para terminar):");
-        while (true) {
-            String phoneNumber = scanner.nextLine();
-            if (phoneNumber.equalsIgnoreCase("sair")) {
-                break;
-            }
-            phoneNumbers.add(phoneNumber);
-        }
+        List<String> phoneNumbers = GetPhoneNumber.collectPhoneNumbers();
 
-        // Collect site URLs
-        System.out.println("Digite os links dos sites (digite 'sair' para terminar):");
-        while (true) {
-            String url = scanner.nextLine();
-            if (url.equalsIgnoreCase("sair")) {
-                break;
-            }
-            sites.add(new Site(url));
-        }
+        List<Site> sites = GetSiteURL.collectSites();
 
-        // Start monitoring
         SwingUtilities.invokeLater(() -> new SiteMonitorWindow(sites, phoneNumbers));
 
+        stopMonitoringThread();
+    }
+
+    private static void stopMonitoringThread() {
         Thread stopThread = new Thread(() -> {
             System.out.println("Digite 'sair' para parar o monitoramento.");
-            while (true) {
-                String userInput = scanner.nextLine();
-                if (userInput.equalsIgnoreCase("sair")) {
-                    stopMonitoring = true;
-                    System.out.println("Monitoramento encerrado!");
-                    break;
+            try (Scanner scanner = new Scanner(System.in)) {
+                while (true) {
+                    String userInput = scanner.nextLine();
+                    if (userInput.equalsIgnoreCase("sair")) {
+                        stopMonitoring = true;
+                        System.out.println("Monitoramento encerrado!");
+                        break;
+                    }
                 }
             }
         });
-
         stopThread.start();
     }
 
