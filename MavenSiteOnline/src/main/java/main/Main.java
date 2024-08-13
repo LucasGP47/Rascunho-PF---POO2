@@ -1,7 +1,6 @@
 package main;
 
 import model.Site;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +8,23 @@ import java.util.Scanner;
 
 public class Main {
     private static boolean stopMonitoring = false;
+    private static List<String> phoneNumbers = new ArrayList<>();
 
     public static void main(String[] args) {
-        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         List<Site> sites = new ArrayList<>();
 
+        // Collect phone numbers
+        System.out.println("Digite os números de telefone para envio de mensagens (formato: whatsapp:+[código do país][número], digite 'sair' para terminar):");
+        while (true) {
+            String phoneNumber = scanner.nextLine();
+            if (phoneNumber.equalsIgnoreCase("sair")) {
+                break;
+            }
+            phoneNumbers.add(phoneNumber);
+        }
+
+        // Collect site URLs
         System.out.println("Digite os links dos sites (digite 'sair' para terminar):");
         while (true) {
             String url = scanner.nextLine();
@@ -24,7 +34,8 @@ public class Main {
             sites.add(new Site(url));
         }
 
-        SwingUtilities.invokeLater(() -> new SiteMonitorWindow(sites));
+        // Start monitoring
+        SwingUtilities.invokeLater(() -> new SiteMonitorWindow(sites, phoneNumbers));
 
         Thread stopThread = new Thread(() -> {
             System.out.println("Digite 'sair' para parar o monitoramento.");
