@@ -1,8 +1,6 @@
 package service;
 
-import main.Main;
 import model.Site;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
@@ -25,7 +23,7 @@ public class SiteMonitorWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
-        monitoringService = new MonitoringService(sites, phoneNumbers, sitesPanel, countdownLabel);
+        monitoringService = new MonitoringService(sites, phoneNumbers, sitesPanel, countdownLabel, true);
         monitoringService.startMonitoring();
     }
 }

@@ -1,32 +1,38 @@
 package facade;
 
-import assists.GetPhoneNumber;
-import assists.GetSiteURL;
 import model.Site;
+import service.MonitoringService;
 import service.SiteMonitorWindow;
 
 import javax.swing.*;
 import java.util.List;
 
 public class SiteMonitoringFacade {
-    private List<String> phoneNumbers;
-    private List<Site> sites;
+    private final List<Site> sites;
+    private final List<String> phoneNumbers;
+    private MonitoringService monitoringService;
 
-    public void setupMonitoring() {
-        collectPhoneNumbers();
-        collectSites();
-        startMonitoring();
+    public SiteMonitoringFacade(List<Site> sites, List<String> phoneNumbers) {
+        this.sites = sites;
+        this.phoneNumbers = phoneNumbers;
     }
 
-    private void collectPhoneNumbers() {
-        phoneNumbers = GetPhoneNumber.collectPhoneNumbers();
+    public void startMonitoringWithGui() {
+        SwingUtilities.invokeLater(() -> {
+            new SiteMonitorWindow(sites, phoneNumbers);
+        });
     }
 
-    private void collectSites() {
-        sites = GetSiteURL.collectSites();
+    public void startMonitoringWithConsole() {
+        monitoringService = new MonitoringService(sites, phoneNumbers, null, null, false); 
+        monitoringService.startMonitoring();
     }
-
-    private void startMonitoring() {
-        SwingUtilities.invokeLater(() -> new SiteMonitorWindow(sites, phoneNumbers));
+    
+    public void startMonitoring(boolean useGui) {
+        if (useGui) {
+            startMonitoringWithGui();
+        } else {
+            startMonitoringWithConsole();
+        }
     }
 }

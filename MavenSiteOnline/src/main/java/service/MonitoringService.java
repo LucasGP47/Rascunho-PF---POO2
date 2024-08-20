@@ -8,6 +8,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -22,11 +23,13 @@ public class MonitoringService {
     private int checkInterval;
     
     private final Map<String, Boolean> notificationSentMap = new HashMap<>();
+    private final boolean useGui;
 
-    public MonitoringService(List<Site> sites, List<String> phoneNumbers, JPanel sitesPanel, JLabel countdownLabel) {
+    public MonitoringService(List<Site> sites, List<String> phoneNumbers, JPanel sitesPanel, JLabel countdownLabel, boolean useGui) {
         this.sites = sites;
         this.sitesPanel = sitesPanel;
         this.countdownLabel = countdownLabel;
+        this.useGui = useGui;
         this.siteChecker = new SiteChecker();
         this.notificationService = new NotificationService(phoneNumbers);
         this.logService = new LogService("messages_log.txt");
@@ -43,25 +46,37 @@ public class MonitoringService {
     }
 
     private void setCheckInterval() {
-        String intervalStr = JOptionPane.showInputDialog(null, "Digite o intervalo de verificação (em segundos):", "Configuração de Intervalo", JOptionPane.QUESTION_MESSAGE);
-        try {
-            checkInterval = Integer.parseInt(intervalStr) * 1000;
-        } catch (NumberFormatException e) {
-            checkInterval = 10000;  // Padrão = 10
+        if (useGui) {
+            String intervalStr = JOptionPane.showInputDialog(null, "Digite o intervalo de verificação (em segundos):", "Configuração de Intervalo", JOptionPane.QUESTION_MESSAGE);
+            try {
+                checkInterval = Integer.parseInt(intervalStr) * 1000;
+            } catch (NumberFormatException e) {
+                checkInterval = 10000;  
+            }
+        } else {
+        	System.out.print("Digite o intervalo de verificação (em segundos): ");
+        	Scanner scanner = new Scanner(System.in);
+            checkInterval = scanner.nextInt() * 1000;
+            scanner.close();
         }
     }
 
     private void monitorSites() {
         while (!Main.shouldStopMonitoring()) {
-            sitesPanel.removeAll();
+            if (sitesPanel != null) {
+                sitesPanel.removeAll();
+            }
 
             for (Site site : sites) {
-                JPanel sitePanel = createSitePanel(site);
-                sitesPanel.add(sitePanel);
+                JPanel sitePanel = null;
+                if (sitesPanel != null) {
+                    sitePanel = createSitePanel(site);
+                    sitesPanel.add(sitePanel);
+                }
 
                 boolean isOnline = siteChecker.isSiteOnline(site);
                 boolean hasChanged = isOnline && siteChecker.hasSiteChanged(site);
-
+                
                 if (!isOnline && !notificationSentMap.get(site.getUrl())) {
                     notificationService.sendOfflineNotification(site.getUrl());
                     notificationSentMap.put(site.getUrl(), true);
@@ -73,14 +88,22 @@ public class MonitoringService {
 
                 if (hasChanged) {
                     String currentTime = logService.formatCurrentDateTime();
-                    site.setLastChangeTime(currentTime);  // Atualiza o tempo de mudança no Site
+                    site.setLastChangeTime(currentTime);
                 }
 
-                updateSitePanel(sitePanel, isOnline, hasChanged, site.getLastChangeTime());
+                if (sitesPanel != null && sitePanel != null) {
+                    updateSitePanel(sitePanel, isOnline, hasChanged, site.getLastChangeTime());
+                }
+
+                if (!useGui) {
+                    System.out.println("URL: " + site.getUrl() + " | " + (isOnline ? "Online" : "Offline") + " | Mudou?: " + (hasChanged ? "Sim" : "Não") + " | Última Mudança: " + site.getLastChangeTime());
+                }
             }
 
-            sitesPanel.revalidate();
-            sitesPanel.repaint();
+            if (sitesPanel != null) {
+                sitesPanel.revalidate();
+                sitesPanel.repaint();
+            }
 
             countdownToNextCheck();
         }
@@ -88,6 +111,22 @@ public class MonitoringService {
         executor.shutdownNow();
     }
 
+    private void countdownToNextCheck() {
+        for (int i = checkInterval / 1000; i >= 0; i--) {
+            if (countdownLabel != null) {
+                int finalI = i;
+                SwingUtilities.invokeLater(() -> countdownLabel.setText("Próxima verificação em: " + finalI + "s"));
+            } else if (!useGui) {
+                System.out.println("Próxima verificação em: " + i + "s");
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                e.printStackTrace();
+            }
+        }
+    }
 
     private JPanel createSitePanel(Site site) {
         JPanel sitePanel = new JPanel(new GridLayout(1, 4));
@@ -109,18 +148,5 @@ public class MonitoringService {
             changeLabel.setText("Mudou: " + (hasChanged ? "Sim" : "Não"));
             lastChangeLabel.setText("Última mudança: " + lastChangeTime);
         });
-    }
-
-    private void countdownToNextCheck() {
-        for (int i = checkInterval / 1000; i >= 0; i--) {
-            int finalI = i;
-            SwingUtilities.invokeLater(() -> countdownLabel.setText("Próxima verificação em: " + finalI + "s"));
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                e.printStackTrace();
-            }
-        }
     }
 }

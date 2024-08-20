@@ -13,4 +13,5 @@ module SiteOnline {
     requires com.fasterxml.jackson.annotation;
     requires com.fasterxml.jackson.datatype.jsr310;
     requires org.slf4j;
+	//requires junit;
 }

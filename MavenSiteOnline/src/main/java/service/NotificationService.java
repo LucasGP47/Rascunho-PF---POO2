@@ -8,7 +8,7 @@ import java.util.List;
 
 public class NotificationService {
     public static final String ACCOUNT_SID = "ACfa76215834903571cb7b2440258ca942";
-    public static final String AUTH_TOKEN = "a09c5394a12c75f40432a83ac59f531a";
+    public static final String AUTH_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
     private final List<String> phoneNumbers;
 
     public NotificationService(List<String> phoneNumbers) {
