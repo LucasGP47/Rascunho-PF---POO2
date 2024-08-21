@@ -16,8 +16,8 @@ public class Main {
 
         SiteMonitoringFacade facade = new SiteMonitoringFacade(sites, phoneNumbers);
 
-        // Controle de uso do GUI ou Console via boolean (true para GUI, false para console)
-        boolean useGui = false;  
+        //(true para GUI, false para console)
+        boolean useGui = true;  
         facade.startMonitoring(useGui);
     }
 

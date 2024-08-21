@@ -368,3 +368,142 @@ Site: http://localhost/site%20example.html | Status: Offline | Mudou: Não | Úl
 2024-08-19 16:48:54.982 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
 2024-08-19 16:48:54.982 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
 2024-08-19 16:48:54.982 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1
+2024-08-20 12:07:10.498 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- BEGIN Twilio API Request --
+2024-08-20 12:07:10.501 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request method: POST
+2024-08-20 12:07:10.502 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request URL: https://api.twilio.com/2010-04-01/Accounts/ACfa76215834903571cb7b2440258ca942/Messages.json
+2024-08-20 12:07:10.503 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- END Twilio API Request --
+2024-08-20 12:07:12.116 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - status code: 401
+2024-08-20 12:07:12.119 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - response headers:
+2024-08-20 12:07:12.119 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Date: Tue, 20 Aug 2024 15:07:10 GMT
+2024-08-20 12:07:12.121 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Type: application/json
+2024-08-20 12:07:12.122 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Length: 107
+2024-08-20 12:07:12.122 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Connection: keep-alive
+2024-08-20 12:07:12.122 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Twilio-Error-Code: 20003
+2024-08-20 12:07:12.122 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Id: RQ2db7a821d590778d877a88558e0d4668
+2024-08-20 12:07:12.122 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Duration: 0.006
+2024-08-20 12:07:12.122 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Api-Domain: api.twilio.com
+2024-08-20 12:07:12.123 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Strict-Transport-Security: max-age=31536000
+2024-08-20 12:07:12.123 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Www-Authenticate: Basic realm="Twilio API"
+2024-08-20 12:07:12.123 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Origin: *
+2024-08-20 12:07:12.123 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Headers: Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key, X-Pre-Auth-Context, X-Target-Region
+2024-08-20 12:07:12.123 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+2024-08-20 12:07:12.123 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Expose-Headers: ETag, Twilio-Request-Id
+2024-08-20 12:07:12.124 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Credentials: true
+2024-08-20 12:07:12.124 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
+2024-08-20 12:07:12.124 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
+2024-08-20 12:07:12.124 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1
+2024-08-20 13:18:11.971 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- BEGIN Twilio API Request --
+2024-08-20 13:18:11.974 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request method: POST
+2024-08-20 13:18:11.975 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request URL: https://api.twilio.com/2010-04-01/Accounts/ACfa76215834903571cb7b2440258ca942/Messages.json
+2024-08-20 13:18:11.976 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- END Twilio API Request --
+2024-08-20 13:18:13.387 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - status code: 201
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - response headers:
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Date: Tue, 20 Aug 2024 16:18:12 GMT
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Type: application/json;charset=utf-8
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Length: 846
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Connection: keep-alive
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Concurrent-Requests: 1
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Id: RQ747e651935a619e945beae75f001d817
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Duration: 0.142
+2024-08-20 13:18:13.389 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Api-Domain: api.twilio.com
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Strict-Transport-Security: max-age=31536000
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Origin: *
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Headers: Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key, X-Pre-Auth-Context, X-Target-Region
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Expose-Headers: ETag, Twilio-Request-Id
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Credentials: true
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
+2024-08-20 13:18:13.390 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1
+2024-08-20 14:53:03.451 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- BEGIN Twilio API Request --
+2024-08-20 14:53:03.454 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request method: POST
+2024-08-20 14:53:03.455 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request URL: https://api.twilio.com/2010-04-01/Accounts/ACfa76215834903571cb7b2440258ca942/Messages.json
+2024-08-20 14:53:03.455 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- END Twilio API Request --
+2024-08-20 14:53:04.641 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - status code: 201
+2024-08-20 14:53:04.645 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - response headers:
+2024-08-20 14:53:04.645 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Date: Tue, 20 Aug 2024 17:53:03 GMT
+2024-08-20 14:53:04.645 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Type: application/json;charset=utf-8
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Length: 846
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Connection: keep-alive
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Concurrent-Requests: 1
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Id: RQ9ff91243fa4ec5ddee936fc6689c651c
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Duration: 0.118
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Api-Domain: api.twilio.com
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Strict-Transport-Security: max-age=31536000
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Origin: *
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Headers: Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key, X-Pre-Auth-Context, X-Target-Region
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Expose-Headers: ETag, Twilio-Request-Id
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Credentials: true
+2024-08-20 14:53:04.646 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
+2024-08-20 14:53:04.647 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
+2024-08-20 14:53:04.647 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1
+2024-08-20 16:36:39.820 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- BEGIN Twilio API Request --
+2024-08-20 16:36:39.824 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request method: POST
+2024-08-20 16:36:39.825 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request URL: https://api.twilio.com/2010-04-01/Accounts/ACfa76215834903571cb7b2440258ca942/Messages.json
+2024-08-20 16:36:39.826 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- END Twilio API Request --
+2024-08-20 16:36:41.008 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - status code: 201
+2024-08-20 16:36:41.011 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - response headers:
+2024-08-20 16:36:41.011 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Date: Tue, 20 Aug 2024 19:36:39 GMT
+2024-08-20 16:36:41.011 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Type: application/json;charset=utf-8
+2024-08-20 16:36:41.011 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Length: 846
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Connection: keep-alive
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Concurrent-Requests: 1
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Id: RQc6a07cdd300e8b334714fb13240ee13d
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Duration: 0.133
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Api-Domain: api.twilio.com
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Strict-Transport-Security: max-age=31536000
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Origin: *
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Headers: Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key, X-Pre-Auth-Context, X-Target-Region
+2024-08-20 16:36:41.012 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+2024-08-20 16:36:41.013 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Expose-Headers: ETag, Twilio-Request-Id
+2024-08-20 16:36:41.013 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Credentials: true
+2024-08-20 16:36:41.013 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
+2024-08-20 16:36:41.013 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
+2024-08-20 16:36:41.013 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1
+2024-08-20 16:40:24.652 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- BEGIN Twilio API Request --
+2024-08-20 16:40:24.656 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request method: POST
+2024-08-20 16:40:24.657 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request URL: https://api.twilio.com/2010-04-01/Accounts/ACfa76215834903571cb7b2440258ca942/Messages.json
+2024-08-20 16:40:24.657 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- END Twilio API Request --
+2024-08-20 16:40:25.775 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - status code: 201
+2024-08-20 16:40:25.777 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - response headers:
+2024-08-20 16:40:25.777 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Date: Tue, 20 Aug 2024 19:40:24 GMT
+2024-08-20 16:40:25.777 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Type: application/json;charset=utf-8
+2024-08-20 16:40:25.777 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Length: 846
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Connection: keep-alive
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Concurrent-Requests: 1
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Id: RQc29e2d16948e3a5125e0f5ec156acc7f
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Duration: 0.123
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Api-Domain: api.twilio.com
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Strict-Transport-Security: max-age=31536000
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Origin: *
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Headers: Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key, X-Pre-Auth-Context, X-Target-Region
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Expose-Headers: ETag, Twilio-Request-Id
+2024-08-20 16:40:25.778 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Credentials: true
+2024-08-20 16:40:25.779 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
+2024-08-20 16:40:25.779 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
+2024-08-20 16:40:25.779 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1
+2024-08-20 18:17:57.783 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- BEGIN Twilio API Request --
+2024-08-20 18:17:57.787 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request method: POST
+2024-08-20 18:17:57.788 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - request URL: https://api.twilio.com/2010-04-01/Accounts/ACfa76215834903571cb7b2440258ca942/Messages.json
+2024-08-20 18:17:57.789 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - -- END Twilio API Request --
+2024-08-20 18:17:58.931 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - status code: 201
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - response headers:
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Date: Tue, 20 Aug 2024 21:17:57 GMT
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Type: application/json;charset=utf-8
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Content-Length: 846
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Connection: keep-alive
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Concurrent-Requests: 1
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Id: RQd1d69d71e46731a07abc81607be9258d
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Twilio-Request-Duration: 0.123
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Api-Domain: api.twilio.com
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Strict-Transport-Security: max-age=31536000
+2024-08-20 18:17:58.935 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Origin: *
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Headers: Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key, X-Pre-Auth-Context, X-Target-Region
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Expose-Headers: ETag, Twilio-Request-Id
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: Access-Control-Allow-Credentials: true
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Shenanigans: none
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Powered-By: AT-5000
+2024-08-20 18:17:58.936 [pool-1-thread-1] DEBUG com.twilio.http.TwilioRestClient - responseHeader: X-Home-Region: us1

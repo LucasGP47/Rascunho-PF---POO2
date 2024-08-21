@@ -17,8 +17,7 @@ public class SiteChecker {
 
     public boolean isSiteOnline(Site site) {
         try {
-            @SuppressWarnings("deprecation")
-			URL url = new URL(site.getUrl());
+            URL url = new URL(site.getUrl());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();

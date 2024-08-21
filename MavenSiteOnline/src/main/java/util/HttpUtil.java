@@ -9,8 +9,7 @@ import java.net.URL;
 public class HttpUtil {
 
     public static String getHttpResponse(String urlString) throws IOException {
-        @SuppressWarnings("deprecation")
-		URL url = new URL(urlString);
+        URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
